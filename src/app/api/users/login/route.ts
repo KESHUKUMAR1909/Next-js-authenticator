@@ -9,7 +9,7 @@ connect();
 export async function POST(request: NextRequest) {
   try {
     const { email, password } = await request.json();
-
+    console.log(request.json);
     // 1. Check if user exists
     const user = await User.findOne({ email });
     if (!user) {

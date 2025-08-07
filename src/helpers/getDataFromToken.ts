@@ -6,7 +6,7 @@ export const getDataFromToken = (request :NextRequest)=>{
         const token =request.cookies.get('token')?.value || "";
         const decodedToken :any = jwt.verify(token , process.env.TOKEN_SECRET!);
 
-        return decodedToken._id;
+        return decodedToken.id;
     }catch(error){
         throw new Error(error.message);
     }
